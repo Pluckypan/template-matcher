@@ -4,7 +4,7 @@ try {
   cv = require('opencv4nodejs-prebuilt-install');
 } catch {}
 
-import { Image, MatchResult, Region, screen } from '@nut-tree-fork/nut-js';
+import { Image, MatchResult, Region, screen } from '@computer-use/nut-js';
 import { Mat, Rect } from 'opencv4nodejs-prebuilt-install';
 
 export class ValidationHandler {

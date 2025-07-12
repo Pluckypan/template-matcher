@@ -1,4 +1,4 @@
-import { providerRegistry } from '@nut-tree-fork/nut-js';
+import { providerRegistry } from '@computer-use/nut-js';
 import TemplateMatchingFinder from './lib/templateMatchingFinder';
 
 const finder = new TemplateMatchingFinder();

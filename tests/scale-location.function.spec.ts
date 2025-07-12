@@ -1,4 +1,4 @@
-import { Region } from '@nut-tree-fork/nut-js';
+import { Region } from '@computer-use/nut-js';
 import { ScaleImageHandler } from '../lib/handlers/scaleImage';
 
 jest.mock('jimp', () => {});

@@ -1,5 +1,5 @@
 import { resolve } from 'path';
-import { Region } from '@nut-tree-fork/nut-js';
+import { Region } from '@computer-use/nut-js';
 import { ImageProcessor } from '../lib/readers/imageProcessor.class';
 import ImageReader from '../lib/readers/imageReader.class';
 import { ValidationHandler } from '../lib/handlers/validation';

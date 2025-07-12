@@ -1,7 +1,7 @@
 # OpenCV 4.1.1 Template Matching Image Finder
 
-![Tested](https://github.com/udarrr/TemplateMatcher/workflows/Tests/badge.svg)
-![Released](https://github.com/udarrr/TemplateMatcher/workflows/Create%20tagged%20release/badge.svg)
+![Tested](https://github.com/easy/TemplateMatcher/workflows/Tests/badge.svg)
+![Released](https://github.com/easy/TemplateMatcher/workflows/Create%20tagged%20release/badge.svg)
 ![Supported node LTS versions](https://img.shields.io/badge/node@arch64-12%2C%2013%2C%2014%2C%2015%2C%2016%2C%2017%2C%2018%2C%2019%2C%2020-green)
 
 ## It's either standalone or plugin for [nutjs project](https://www.npmjs.com/package/@nut-tree/nut-js)
@@ -16,11 +16,11 @@ The best template matcher for node js ever with handlers
 ### Standalone findMatch,findMatches
 
 ```nodejs
-npm i @udarrr/template-matcher
+npm i @easy/template-matcher
 ```
 
 ```typescript
-import finder from "@udarrr/template-matcher";
+import finder from "@easy/template-matcher";
 
 (async () => {
 const matcheImages = await finder.findMatch({haystack: 'pathToImage', needle: 'pathToTemplate'});
@@ -32,7 +32,7 @@ const matchesWithScreen = await finder.findMatches({needle: 'pathToTemplate'});
 
 ```
 
-#### @udarrr/template-matcher standalone API
+#### @easy/template-matcher standalone API
 
 ```typescript
 {
@@ -54,13 +54,13 @@ const matchesWithScreen = await finder.findMatches({needle: 'pathToTemplate'});
 ### Nutjs v3 find,findAll
 
 ```nodejs
-npm i @udarrr/template-matcher
+npm i @easy/template-matcher
 ```
 
 ```typescript
 import { imageResource, screen } from '@nut-tree/nut-js';
-import {OptionsSearchParameterType} from '@udarrr/template-matcher/lib/types'
-import "@udarrr/template-matcher"; //once wherever
+import {OptionsSearchParameterType} from '@easy/template-matcher/lib/types'
+import "@easy/template-matcher"; //once wherever
 
 (async () => {
   const img = await screen.find<OptionsSearchParameterType>(imageResource("path"),{ providerData: {...}});
@@ -69,7 +69,7 @@ import "@udarrr/template-matcher"; //once wherever
 
 ```
 
-#### @udarrr/template-matcher providerData nutjs v3 Api
+#### @easy/template-matcher providerData nutjs v3 Api
 
 ```typescript
 {

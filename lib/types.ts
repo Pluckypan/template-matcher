@@ -1,4 +1,4 @@
-import { Image, MatchResult, Region } from '@nut-tree-fork/nut-js';
+import { Image, MatchResult, Region } from '@computer-use/nut-js';
 import { Mat } from 'opencv4nodejs-prebuilt-install/lib/typings/Mat';
 import { Point2 } from 'opencv4nodejs-prebuilt-install/lib/typings/Point2';
 import { Rect } from 'opencv4nodejs-prebuilt-install/lib/typings/Rect';
