@@ -16,11 +16,11 @@ The best template matcher for node js ever with handlers
 ### Standalone findMatch,findMatches
 
 ```nodejs
-npm i @easy/template-matcher
+npm i easy-template-matcher
 ```
 
 ```typescript
-import finder from "@easy/template-matcher";
+import finder from "easy-template-matcher";
 
 (async () => {
 const matcheImages = await finder.findMatch({haystack: 'pathToImage', needle: 'pathToTemplate'});
@@ -32,7 +32,7 @@ const matchesWithScreen = await finder.findMatches({needle: 'pathToTemplate'});
 
 ```
 
-#### @easy/template-matcher standalone API
+#### easy-template-matcher standalone API
 
 ```typescript
 {
@@ -54,13 +54,13 @@ const matchesWithScreen = await finder.findMatches({needle: 'pathToTemplate'});
 ### Nutjs v3 find,findAll
 
 ```nodejs
-npm i @easy/template-matcher
+npm i easy-template-matcher
 ```
 
 ```typescript
 import { imageResource, screen } from '@nut-tree/nut-js';
-import {OptionsSearchParameterType} from '@easy/template-matcher/lib/types'
-import "@easy/template-matcher"; //once wherever
+import {OptionsSearchParameterType} from 'easy-template-matcher/lib/types'
+import "easy-template-matcher"; //once wherever
 
 (async () => {
   const img = await screen.find<OptionsSearchParameterType>(imageResource("path"),{ providerData: {...}});
@@ -69,7 +69,7 @@ import "@easy/template-matcher"; //once wherever
 
 ```
 
-#### @easy/template-matcher providerData nutjs v3 Api
+#### easy-template-matcher providerData nutjs v3 Api
 
 ```typescript
 {
