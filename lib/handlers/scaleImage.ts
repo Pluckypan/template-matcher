@@ -1,13 +1,13 @@
 let cv: any;
 
 try {
-  cv = require('opencv4nodejs-prebuilt-install');
+  cv = require('@u4/opencv4nodejs');
 } catch {}
 
 import { MatchResult, Region } from '@computer-use/nut-js';
 import { MethodNameType, MatchedResults } from '../types';
 import { OverWritingMatcherHandler } from './overWriting';
-import { Mat } from 'opencv4nodejs-prebuilt-install';
+import { Mat } from '@u4/opencv4nodejs';
 
 export class ScaleImageHandler {
   static lowerBound(value: number, boundary: number, minValue: number): number {

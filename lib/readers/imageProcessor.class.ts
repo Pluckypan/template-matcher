@@ -1,12 +1,12 @@
 let cv: any;
 
 try {
-  cv = require('opencv4nodejs-prebuilt-install');
+  cv = require('@u4/opencv4nodejs');
 } catch {}
 
 import { ColorMode, Image } from '@computer-use/nut-js';
-import { Mat } from 'opencv4nodejs-prebuilt-install/lib/typings/Mat';
-import { Rect } from 'opencv4nodejs-prebuilt-install/lib/typings/Rect';
+import { Mat } from '@u4/opencv4nodejs/typings/Mat';
+import { Rect } from '@u4/opencv4nodejs/typings/Rect';
 
 export class ImageProcessor {
   static fromImageWithAlphaChannel = async (img: Image, roi?: Rect): Promise<Mat> => {

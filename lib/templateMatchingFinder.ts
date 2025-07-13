@@ -1,13 +1,13 @@
 import { Image, ImageFinderInterface, imageResource, MatchRequest, MatchResult, Region, screen } from '@computer-use/nut-js';
 import { ScaleImageHandler } from './handlers/scaleImage';
 import { ImageProcessor } from './readers/imageProcessor.class';
-import { Mat } from 'opencv4nodejs-prebuilt-install/lib/typings/Mat';
+import { Mat } from '@u4/opencv4nodejs/typings/Mat';
 import { CustomMatchRequest, MethodEnum, MethodNameType, CustomConfigType, SingleTargetMatch } from './types';
 import { OverWritingMatcherHandler } from './handlers/overWriting';
 import { ValidationHandler } from './handlers/validation';
 import { NonMaximumSuppressionHandler } from './handlers/nonMaximumSuppression';
 import { InvariantRotatingHandler } from './handlers/invariantRotating';
-import { Point2 } from 'opencv4nodejs-prebuilt-install';
+import { Point2 } from '@u4/opencv4nodejs';
 
 export default class TemplateMatchingFinder implements ImageFinderInterface {
   private _config: CustomConfigType;

@@ -1,11 +1,11 @@
 let cv: any;
 
 try {
-  cv = require('opencv4nodejs-prebuilt-install');
+  cv = require('@u4/opencv4nodejs');
 } catch {}
 
 import { Image, MatchResult, Region, screen } from '@computer-use/nut-js';
-import { Mat, Rect } from 'opencv4nodejs-prebuilt-install';
+import { Mat, Rect } from '@u4/opencv4nodejs';
 
 export class ValidationHandler {
   static determineMatRectROI(img: Image, roi: Region): Rect {

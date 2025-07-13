@@ -1,4 +1,4 @@
-import * as cv from 'opencv4nodejs-prebuilt-install';
+import * as cv from '@u4/opencv4nodejs';
 import { mockPartial } from 'sneer';
 import { OverWritingMatcherHandler } from '../lib/handlers/overWriting';
 import { MethodEnum } from '../lib/types';

@@ -1,12 +1,12 @@
 let cv: any;
 
 try {
-  cv = require('opencv4nodejs-prebuilt-install');
+  cv = require('@u4/opencv4nodejs');
 } catch {}
 
 import { MatchResult, Region } from '@computer-use/nut-js';
 import { MatchedResults, MethodEnum, MethodNameType } from '../types';
-import { Mat, Point2, Vec3 } from 'opencv4nodejs-prebuilt-install';
+import { Mat, Point2, Vec3 } from '@u4/opencv4nodejs';
 
 export class OverWritingMatcherHandler {
   public static async matchImages(

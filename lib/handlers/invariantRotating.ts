@@ -1,8 +1,8 @@
 // Source C++ library //https://github.com/DennisLiu1993/Fastest_Image_Pattern_Matching under BSD 2-Clause License Copyright (c) 2022, DennisLiu1993
 
-import cv from 'opencv4nodejs-prebuilt-install';
+import cv from '@u4/opencv4nodejs';
 import { MatchParameter, SingleTargetMatch, Vector } from '../types';
-import { Mat, Size, BORDER_CONSTANT, CV_32F, CV_64F, FILLED, INTER_LINEAR, Point2, Rect, RotatedRect, Vec3 } from 'opencv4nodejs-prebuilt-install';
+import { Mat, Size, BORDER_CONSTANT, CV_32F, CV_64F, FILLED, INTER_LINEAR, Point2, Rect, RotatedRect, Vec3 } from '@u4/opencv4nodejs';
 
 export class InvariantRotatingHandler {
   private static MATCH_CANDIDATE_NUM = 5;
@@ -49,8 +49,7 @@ export class InvariantRotatingHandler {
   ) {
     if ((matDst.cols < matSrc.cols && matDst.rows > matSrc.rows) || (matDst.cols > matSrc.cols && matDst.rows < matSrc.rows)) {
       throw new Error(
-        `(matDst.cols < matSrc.cols && matDst.rows > matSrc.rows) || (matDst.cols > matSrc.cols && matDst.rows < matSrc.rows) is ${
-          (matDst.cols < matSrc.cols && matDst.rows > matSrc.rows) || (matDst.cols > matSrc.cols && matDst.rows < matSrc.rows)
+        `(matDst.cols < matSrc.cols && matDst.rows > matSrc.rows) || (matDst.cols > matSrc.cols && matDst.rows < matSrc.rows) is ${(matDst.cols < matSrc.cols && matDst.rows > matSrc.rows) || (matDst.cols > matSrc.cols && matDst.rows < matSrc.rows)
         }`,
       );
     }
@@ -445,7 +444,7 @@ export class InvariantRotatingHandler {
     }
     const matATransposed = InvariantRotatingHandler.Transpose(matA);
     const matAMultiplicated = matATransposed.matMul(matA);
-    const matAInverted = cv.invert(matAMultiplicated);
+    const matAInverted = matAMultiplicated.threshold(254, 255, cv.THRESH_BINARY_INV);
     const matAInvertedMultiplicated = matAInverted.matMul(InvariantRotatingHandler.Transpose(matA));
     matZ = matAInvertedMultiplicated.matMul(matS);
     const matZ_t = InvariantRotatingHandler.Transpose(matZ);
@@ -467,8 +466,8 @@ export class InvariantRotatingHandler {
     matK2.set(0, 0, -matZ_t.at(0, 6));
     matK2.set(1, 0, -matZ_t.at(0, 7));
     matK2.set(2, 0, -matZ_t.at(0, 8));
-
-    const matDelta = cv.invert(matK1).matMul(matK2);
+    const tmpK1 = matK1.threshold(254, 255, cv.THRESH_BINARY_INV);
+    const matDelta = tmpK1.matMul(matK2);
 
     const dNewX = matDelta.at(0, 0);
     const dNewY = matDelta.at(1, 0);
@@ -572,7 +571,7 @@ export class InvariantRotatingHandler {
         }
       }
     }
-    for (let i = 0; i < vec.length; ) {
+    for (let i = 0; i < vec.length;) {
       if (vec[i].bDelete) {
         vec.splice(i, 1);
       } else {
@@ -911,7 +910,7 @@ export class InvariantRotatingHandler {
     let iTopLayer = InvariantRotatingHandler.GetTopLayer(matDst, Math.sqrt(iMinDstLength));
     const pyramid = await matDst.buildPyramidAsync(iTopLayer);
     templData.vecPyramid = pyramid;
-    templData.iBorderColor = cv.mean(matDst).w < 128 ? 255 : 0;
+    templData.iBorderColor = cv.mean(matDst, matDst).w < 128 ? 255 : 0;
 
     for (let i = 0; i < templData.vecPyramid.length; i++) {
       const invArea = 1 / (templData.vecPyramid[i].rows * templData.vecPyramid[i].cols);

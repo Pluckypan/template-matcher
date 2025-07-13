@@ -1,9 +1,9 @@
 import { Image, MatchResult, Region } from '@computer-use/nut-js';
-import { Mat } from 'opencv4nodejs-prebuilt-install/lib/typings/Mat';
-import { Point2 } from 'opencv4nodejs-prebuilt-install/lib/typings/Point2';
-import { Rect } from 'opencv4nodejs-prebuilt-install/lib/typings/Rect';
-import { RotatedRect } from 'opencv4nodejs-prebuilt-install/lib/typings/RotatedRect';
-import { Size } from 'opencv4nodejs-prebuilt-install/lib/typings/Size';
+import { Mat } from '@u4/opencv4nodejs/typings/Mat';
+import { Point2 } from '@u4/opencv4nodejs/typings/Point2';
+import { Rect } from '@u4/opencv4nodejs/typings/Rect';
+import { RotatedRect } from '@u4/opencv4nodejs/typings/RotatedRect';
+import { Size } from '@u4/opencv4nodejs/typings/Size';
 
 export enum MethodEnum {
   TM_CCOEFF = 'TM_CCOEFF',

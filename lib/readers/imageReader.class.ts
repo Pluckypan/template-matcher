@@ -1,7 +1,7 @@
 let cv: any;
 
 try {
-  cv = require('opencv4nodejs-prebuilt-install');
+  cv = require('@u4/opencv4nodejs');
 } catch {}
 
 import { Image, ImageReader } from '@computer-use/nut-js';
